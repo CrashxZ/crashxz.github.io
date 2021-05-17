@@ -1,5 +1,6 @@
 function translate(){
     var url = window.location.href;
+    console.log(url)
     if(url.startsWith("https://translate.google.com")){
         var newurl = "http://crashxz.github.io";
     }
