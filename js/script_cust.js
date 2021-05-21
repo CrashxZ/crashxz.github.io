@@ -19,5 +19,5 @@ var now = new Date().getTime();
 var distance = countDownDate - now;
 console.log(distance);
 if ( distance > 0){
-  // document.location.replace("commingsoon.html");
+  document.location.replace("commingsoon.html");
 }

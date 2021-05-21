@@ -2103,7 +2103,7 @@ ul.location_icon span {
     padding: 17px 0px; }
 
 
-.sport_product {
+.target_product {
     padding: 40px 20px;
     background: #fff;
     text-align: center;
@@ -2111,8 +2111,8 @@ ul.location_icon span {
 }
 .price_text {font-size: 20px; color: #1369f5;}
 
-.sport_product figure {margin:0;}
-.sport_product figure img {height: 300px;}
+.target_product figure {margin:0;}
+.target_product figure img {height: 300px;}
 .new-text {
 
     position: absolute;
@@ -2152,7 +2152,7 @@ ul.location_icon span {
      margin-top: 130px !important;
 }
 
-.sport_product .images-main {
+.target_product .images-main {
 
     margin: 0;
     width: 100%;
@@ -2162,12 +2162,12 @@ ul.location_icon span {
 
 }  
 
-.sport_product h3 {
+.target_product h3 {
      font-size: 29px;
 line-height: 25px;
 padding-top: 25px;
 }
-.sport_product h4 {
+.target_product h4 {
      color: #000;
      font-size: 24px;
 line-height: 24px;
@@ -2200,7 +2200,7 @@ font-weight:normal;
 line-height: 18px;  
 }
 
-.sport_product_main{
+.target_product_main{
     min-height: 590px;
     background: #136af8;
     position: relative;
@@ -2593,7 +2593,7 @@ text-align: center;
 
 .main-menu ul > li a {padding-top: 5px;}
 
-.sport_product {
+.target_product {
 
     margin-bottom: 20px;
 
