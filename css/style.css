@@ -1652,7 +1652,7 @@ line-height: 31px;
 display: block;
 font-weight: normal;
 }
-.clothes_main{
+.drones_main{
      width: 100%; 
      float: left;
      background-color: #081b30;
@@ -2576,11 +2576,11 @@ margin-bottom: 20px;
 text-align: center;
 }
 .contact_us .titlepage h2 {text-align: center;}
-.form-control {
+/* .form-control {
 
     padding: 13px 16px;
 
-}
+} */
 
 .footer p {color: #fff;}
 .footer p a {color: #fff;}
@@ -2588,7 +2588,7 @@ text-align: center;
 
 
 
-.product_pagr .clothes_main {margin-bottom: 90px;}
+.product_pagr .drones_main {margin-bottom: 90px;}
 
 
 .main-menu ul > li a {padding-top: 5px;}
@@ -2601,3 +2601,11 @@ text-align: center;
 
 
 .about_pape .banner-main {margin-bottom: 60px;}
+
+.nice-select {display: none}
+
+#configurator .row{
+     margin-bottom: 0.5rem;
+     flex-wrap: unset;
+     padding :unset;
+}
