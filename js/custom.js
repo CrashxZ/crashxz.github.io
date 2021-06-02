@@ -13,7 +13,8 @@ $(function () {
 		$('.loader_bg').fadeToggle();
 	}, 1500);
 
-	/* JQuery Menu
+
+		/* JQuery Menu
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 	$(document).ready(function () {
@@ -48,19 +49,20 @@ $(function () {
 		});
 	});
 
+//TODO : Nice Scrool
 	/* NiceScroll
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-	$(".brand-box").niceScroll({
-		cursorcolor: "#9b9b9c",
-	});
+	// $(".brand-box").niceScroll({
+	// 	cursorcolor: "#9b9b9c",
+	// });
 
-	/* NiceSelect
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+	// /* NiceSelect
+	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-	$(document).ready(function () {
-		$('select').niceSelect();
-	});
+	// $(document).ready(function () {
+	// 	$('select').niceSelect();
+	// });
 
 	/* OwlCarousel - Blog Post slider
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
@@ -151,12 +153,14 @@ $(function () {
 
 	/* Contact-form
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+try{
+
 	$.validator.setDefaults({
 		submitHandler: function () {
 			alert("submitted!");
 		}
 	});
-
 	$(document).ready(function () {
 		$("#contact-form").validate({
 			rules: {
@@ -199,6 +203,11 @@ $(function () {
 			}
 		});
 	});
+}
+catch(e){
+	console.log("Nothing to worry here!")
+}
+	
 
 	/* heroslider
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */

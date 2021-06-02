@@ -27,7 +27,7 @@
       <!-- owl stylesheets --> 
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen"> -->
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -258,12 +258,11 @@
                      </div>
                      </div>
                      <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-4">
-                          <div class="site_info" href="https://www.instagram.com/coptercustomsteam/">
-                             <span class="info_icon"><img src="image/instagram_icon.png" /></span>
-                             <a style ="color: white;"href="https://www.instagram.com/coptercustomsteam/">
-                             <span style="margin-top: 10px;">Instagram - CopterCustomsTeam</span></a></div>
-                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-4" onclick="window.location='http://www.instagram.com/coptercustomsteam/';">
+                           <div class="site_info">
+                              <span class="info_icon"><img href = "http://www.instagram.com/coptercustomsteam/" src="image/instagram_icon.png" /></span>
+                              <span style="margin-top: 21px;">Instagram</span></div>
+                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-4">
                           <div class="site_info">
                              <span class="info_icon"><img src="images/phone-icon.png" /></span>
@@ -292,23 +291,6 @@
 
       <!-- javascript --> 
       <script src="js/owl.carousel.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-      <script>
-         $(document).ready(function(){
-         $(".fancybox").fancybox({
-         openEffect: "none",
-         closeEffect: "none"
-         });
-         
-         $(".zoom").hover(function(){
-         
-         $(this).addClass('transition');
-         }, function(){
-         
-         $(this).removeClass('transition');
-         });
-         });
-         $ = jQuery.noConflict();
-      </script> 
+
    </body>
 </html>

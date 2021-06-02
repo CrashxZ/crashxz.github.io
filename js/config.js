@@ -11,13 +11,13 @@ var type = getParameterByName("type");
 console.log(type)
 var database = [];
 //13351
-query = "https://api.apispreadsheets.com/data/13368/?query=select*from13351wheredrone_varient='"+ type + "'"
+query = "https://api.apispreadsheets.com/data/13368/?query=select*from13368wheredrone_varient='"+ type + "'"
 fetch(query).then(res=>{
 	if (res.status === 200){
 		// SUCCESS
 		res.json().then(data=>{
 			database = data
-            console.log(data)
+            //console.log(data)
             data.data.forEach(element => {
 
                 jQuery(document).ready(function($){
@@ -64,7 +64,6 @@ fetch(query).then(res=>{
 var price = 0
 $(function(){
     if(type=='DID5'){
-        console.log("5 Inch Drone")
         $("#drone_name").text("5 Inch Drone")
     }
     if(type=='DID7'){
@@ -88,13 +87,13 @@ $(function(){
             //console.log(item_id)
             if(item_id != 0){
                 item = database.data.find( item  => item.part_id == item_id)
-                console.log(item)
+                //console.log(item)
                 price = price + item.price
             }
             
         })
         $("#total_price").text("₽"+price)
-        console.log(price)
+        //console.log(price)
     })
 })
 
