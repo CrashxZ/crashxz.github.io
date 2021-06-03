@@ -158,18 +158,9 @@ $("#confirm_buy").click(function(){
 })
 })
 
-function confirm_buy(){
-    $( "select" ).each(function(){
-        var selector = "#" + this.id + " " + "option:selected" 
-        item_id = $(selector).val()
-        if(item_id != 0){
-            item = database.data.find( item  => item.part_id == item_id)
-            configured_item.push(item)
-        }
-    })
-    console.log(configured_item);
+//TODO : Reset Buton
 
-}
+
 
 
 
