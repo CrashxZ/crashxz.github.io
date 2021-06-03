@@ -27,6 +27,7 @@
       <!-- owl stylesheets --> 
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      
       <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen"> -->
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -118,7 +119,7 @@
             <div class="row">
                <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12">
                   <div class="target_product">
-                     <figure><img src="images/basketball.png" alt="img"/></figure>
+                     <figure><img src="image/spin2.gif" alt="img"/></figure>
                     <h3 id = "drone_name">Drone Name</h3>
                     <form id="configurator">
 
@@ -182,29 +183,52 @@
                         <option  value="0" disabled selected >Select your battery</option>
                      </select>
                      </div>
-                    
-                        <!-- <input list="frame" class="form-control form-control-sm" placeholder="Frame" name="frame">
-                        <datalist id = "frame"></datalist>                     
-                        <input list="FC" class="form-control form-control-sm" placeholder="Flight Controller" name="fc">
-                        <datalist id = "FC"></datalist>                
-                        <input list="ESC" class="form-control form-control-sm" placeholder="ESCs" name="ESC">
-                        <datalist id = "ESC"></datalist>                    
-                        <input list="motor" class="form-control form-control-sm" placeholder="Motors" name="motor">
-                        <datalist id = "motor"></datalist>
-                        <input list="props" class="form-control form-control-sm" placeholder="Propellors" name="props">
-                        <datalist id = "props"></datalist>
-                        <input list="VTX" class="form-control form-control-sm" placeholder="VTX + Antenna" name="VTX">
-                        <datalist id = "VTX"></datalist>
-                        <input list="camera" class="form-control form-control-sm" placeholder="Camera" name="camera">
-                        <datalist id = "camera"></datalist>
-                        <input list="battery" class="form-control form-control-sm" placeholder="Battery" name="battery">
-                        <datalist id = "battery"></datalist> -->
-                        <div style = "padding-top:5%">
+
+                     <div class="form-group row" > 
+                        <label class="col-sm-2 col-form-label"> Charger : </label>
+                        <select id="charger" class="form-control form-control-sm" placeholder="Charger" name="charger">
+                           <option  value="0" disabled selected >Select your Battery Charger</option>
+                        </select>
+                     </div>
+
+                     <div class="form-group row" > 
+                        <label class="col-sm-2 col-form-label"> Radio Transmitter : </label>
+                        <select id="transmitter" class="form-control form-control-sm" placeholder="Transmitter" name="transmitter">
+                           <option  value="0" disabled selected >Select your Radio</option>
+                        </select>
+                     </div>
+
+                     <div class="form-group row" > 
+                        <label class="col-sm-2 col-form-label"> Reciever(Rx) : </label>
+                        <select id="reciever" class="form-control form-control-sm" placeholder="Reciever" name="reciever">
+                           <option  value="0" disabled selected >Select your Reciever</option>
+                        </select>
+                     </div>
+
+                     <!-- <div class="form-group row" > 
+                        <label class="col-sm-2 col-form-label">Assembly Required : </label>
+                        <input type="checkbox" style="height: 30px;"  class="form-control form-control-sm" style="padding-top: 0.5em;"  id="assembly_required" name="assembly_required" >
+                        
+                     </div> -->
+
+                     <div class="form-group row"> 
+                        <label class="col-sm-2 col-form-label"> Extra Battery : </label>
+                        <input type="checkbox" style="height: 30px;"  class="form-control form-control-sm" style="padding-top: 0.5em;"  id="extra_battery" name="extra_battery" >
+                        <label class="col-sm-2 col-form-label"> Comments : </label>
+                        <textarea rows="3" class="form-control form-control-lg" id="comments" name="comments" ></textarea>
+                     </div>
+
+                     <!-- <div class="form-group row" > 
+                        <label class="col-sm-2 col-form-label"> Comments : </label>
+                        <input type="text" class="form-control form-control-lg" id="comments" name="comments" >
+                     </div> -->
+
+                        <div class="form-group">
                            <h4 style=" color: #fff;">Total Price  : </h4><h4 id ="total_price" style=" color: #fff;"></h4>  
                         </div>
                       
-                        <div style = "padding-top:5%">
-                           <button onclick="" type="button" class="btn btn-primary" style="background: #fff; color: #081b30; padding: 11px;">Confirm and Buy</button>
+                        <div class="form-group">
+                           <button onclick="" type="button" id="confirm_buy" class="btn btn-primary" style="background: #fff; color: #081b30; padding: 11px;">Confirm and Buy</button>
                         </div>
                      
                    </form>
@@ -291,6 +315,7 @@
 
       <!-- javascript --> 
       <script src="js/owl.carousel.js"></script>
+      
 
    </body>
 </html>

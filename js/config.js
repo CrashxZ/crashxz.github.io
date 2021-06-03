@@ -10,8 +10,13 @@ function getParameterByName(name, url = window.location.href) {
 var type = getParameterByName("type");
 console.log(type)
 var database = [];
-//13351
-query = "https://api.apispreadsheets.com/data/13368/?query=select*from13368wheredrone_varient='"+ type + "'"
+var price = 0
+var configured_item = []
+var extra_batt = 'no'
+var batt_price = 0
+
+//13368
+query = "https://api.apispreadsheets.com/data/13351/?query=select*from13351wheredrone_varient='"+ type + "'"
 fetch(query).then(res=>{
 	if (res.status === 200){
 		// SUCCESS
@@ -49,6 +54,16 @@ fetch(query).then(res=>{
                     if (element.part_type == 'Battery'){
                         $("#battery").append(new Option(element.part_name + " - ₽" + element.price,element.part_id))
                     }
+                    if (element.part_type == 'Charger'){
+                        $("#charger").append(new Option(element.part_name + " - ₽" + element.price,element.part_id))
+                    }
+                    if (element.part_type == 'Transmitter'){
+                        $("#transmitter").append(new Option(element.part_name + " - ₽" + element.price,element.part_id))
+                    }
+                    if (element.part_type == 'Reciever'){
+                        $("#reciever").append(new Option(element.part_name + " - ₽" + element.price,element.part_id))
+                    }
+                    
                 });
                 
             });
@@ -61,7 +76,7 @@ fetch(query).then(res=>{
 })
 
 
-var price = 0
+
 $(function(){
     if(type=='DID5'){
         $("#drone_name").text("5 Inch Drone")
@@ -88,12 +103,65 @@ $(function(){
             if(item_id != 0){
                 item = database.data.find( item  => item.part_id == item_id)
                 //console.log(item)
+                if (item.part_type == 'Battery'){
+                    batt_price = item.price;
+                    console.log(batt_price)
+                }
                 price = price + item.price
             }
             
         })
         $("#total_price").text("₽"+price)
-        //console.log(price)
+
     })
+
+$('#extra_battery').click(function(){
+    
+    if ($('#extra_battery').is(':checked'))
+    {
+        extra_batt = 'yes';
+        price = price + batt_price
+        
+    }
+    else{
+        extra_batt = 'no';
+        price = price - batt_price
+    }
+    $("#total_price").text("₽"+price)
 })
+
+
+$("#confirm_buy").click(function(){
+    $( "select" ).each(function(){
+        var selector = "#" + this.id + " " + "option:selected" 
+        item_id = $(selector).val()
+        if(item_id != 0){
+            item = database.data.find( item  => item.part_id == item_id)
+            configured_item.push(item)
+        }
+    })
+    
+    configured_item.push({extra_battery : extra_batt})
+    configured_item.push({comments : $('#comments').val()})
+    console.log(configured_item);
+    configured_item = JSON.stringify(configured_item)
+    localStorage.setItem("user_config", configured_item)
+    $("#confirm_buy").prop('disabled', true)
+})
+})
+
+function confirm_buy(){
+    $( "select" ).each(function(){
+        var selector = "#" + this.id + " " + "option:selected" 
+        item_id = $(selector).val()
+        if(item_id != 0){
+            item = database.data.find( item  => item.part_id == item_id)
+            configured_item.push(item)
+        }
+    })
+    console.log(configured_item);
+
+}
+
+
 
