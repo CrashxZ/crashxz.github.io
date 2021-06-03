@@ -1,3 +1,11 @@
+//Visual
+setTimeout(function () {
+    $('.loader_bg').fadeToggle();
+}, 1500);
+
+
+
+//logic
 function getParameterByName(name, url = window.location.href) {
     name = name.replace(/[\[\]]/g, '\\$&');
     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),

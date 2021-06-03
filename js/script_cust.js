@@ -12,6 +12,26 @@ function SubForm(){
     });
 }
 
+document.addEventListener("DOMContentLoaded", function(event) {
+  // Your code to run since DOM is loaded and ready
+  $('#drone5').hover(function(){
+    $(this).text("$200")
+  },function(){
+    $(this).text("Buy Now")
+  })
+  $('#drone7').hover(function(){
+    $(this).text("$300")
+  },function(){
+    $(this).text("Buy Now")
+  })
+  $('#drone10').hover(function(){
+    $(this).text("$400")
+  },function(){
+    $(this).text("Buy Now")
+  })
+});
+
+
 
 // Set the date we're counting down to
 var countDownDate = new Date("June 17, 2021 00:00:00").getTime();
