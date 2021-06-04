@@ -1,7 +1,7 @@
 //Visual
 setTimeout(function () {
     $('.loader_bg').fadeToggle();
-}, 300);
+}, 1300);
 
 
 
