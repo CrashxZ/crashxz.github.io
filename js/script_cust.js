@@ -12,10 +12,21 @@ function SubForm(){
     });
 }
 
+var locale = navigator.language;
+
 document.addEventListener("DOMContentLoaded", function(event) {
   // Your code to run since DOM is loaded and ready
-  var locale = navigator.language;
+  if (localStorage.getItem("localSet") === null){
+    if(locale.startsWith("en")){
+      console.log("English Version")
+    }
+    else{
+      console.log("Russian Version")
+    }
+  }
+
   console.log(locale);
+
 
 
   $('#drone5').hover(function(){
