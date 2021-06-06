@@ -12,53 +12,32 @@ function SubForm(){
     });
 }
 
+
 var locale = navigator.language;
 var language = "";
 if (localStorage.getItem("translate_flag")===null){
   localStorage.setItem("translate_flag",'0');
-}
-function translate(){
-  if (localStorage.getItem("localSet") === "ru"){
-    document.location.replace("index.html");
-    localStorage.setItem("localSet","en");
-    console.log("English Version")
-  }
-  else if (localStorage.getItem("localSet") === "en"){
-    document.location.replace("ru_index.html");
+  if(locale === "ru-RU"){
     localStorage.setItem("localSet","ru");
-    console.log("Russian Version")
+    document.location.replace("ru_index.html");
   }
+}
+
+
+function translate_to_english(){
+  document.location.replace("index.html");
+  localStorage.setItem("translate_flag",'1');
+}
+function translate_to_russian(){
+  document.location.replace("ru_index.html");
   localStorage.setItem("translate_flag",'1');
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
   // Your code to run since DOM is loaded and ready
 
-  if (localStorage.getItem("localSet") === null){
-    if(locale === "ru-RU"){
-      localStorage.setItem("localSet","ru");
-      document.location.replace("ru_index.html");
-    } else {
-      localStorage.setItem("localSet","en");
-    }
-  }
-
-
-
-  // }else if(localStorage.getItem("localSet") === "ru"){
-  //   localStorage.setItem("localSet","en");
-  //   document.location.replace("ru_index.html");
-  // }
-    
-  // if(locale === "ru-RU"){
-  //   language = "en"
-  // }
-  // else{
-  //   language = "ru"
-  // }
-  //console.log(language)
-  $('#english_version').click(translate);
-  $('#russian_version').click(translate)
+  $('#english_version').click(translate_to_russian);
+  $('#russian_version').click(translate_to_english)
 
 
   $('#drone5').hover(function(){
