@@ -26,7 +26,7 @@ fetch(query).then(res=>{
 		// SUCCESS
 		res.json().then(data=>{
 			database = data
-            console.log(data)
+            //console.log(data)
             data.data.forEach(element => {
 
                 jQuery(document).ready(function($){
@@ -82,12 +82,43 @@ fetch(query).then(res=>{
 	}
 })
 
+function populateOptimal(){
+    $('option').each(function(){
+        if(this.value != "0"){
+            this.selected = true
+        }
+    })
+
+
+    price = 0
+
+    $( "select" ).each(function(){
+        var selector = "#" + this.id + " " + "option:selected" 
+        item_id = $(selector).val()
+        if(item_id != 0){
+            item = database.data.find( item  => item.part_id == item_id)
+            if (item.part_type == 'Battery'){
+                batt_price = item.price;
+                console.log(batt_price)
+            }
+            price = price + item.price
+        }
+        
+    })
+    $("#total_price").text("₽"+price)
+
+
+
+
+}
+
 
 
 $(function(){
     if(type=='DID2'){
         $("#drone_name").text("TinyWhoop - 2-inch")
         $('#figure').attr("src","image/DID2.png")
+        setTimeout(populateOptimal,2000);
     }
     if(type=='DID5'){
         $("#drone_name").text("5 Inch Drone")
