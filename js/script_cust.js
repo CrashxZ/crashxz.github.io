@@ -41,3 +41,9 @@ console.log(distance);
 if ( distance > 0){
   //document.location.replace("commingsoon.html");
 }
+
+
+$(function(){
+  var locale = navigator.locale;
+  console.log(locale);
+})
