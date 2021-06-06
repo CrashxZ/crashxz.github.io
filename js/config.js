@@ -26,7 +26,7 @@ fetch(query).then(res=>{
 		// SUCCESS
 		res.json().then(data=>{
 			database = data
-            //console.log(data)
+            console.log(data)
             data.data.forEach(element => {
 
                 jQuery(document).ready(function($){
@@ -84,12 +84,15 @@ fetch(query).then(res=>{
 $(function(){
     if(type=='DID5'){
         $("#drone_name").text("5 Inch Drone")
+        $('#figure').attr("src","image/DID5.png")
     }
     if(type=='DID7'){
         $("#drone_name").text("7 Inch Drone")
+        $('#figure').attr("src","image/DID7.png")
     }
     if(type=='DID10'){
         $("#drone_name").text("10 Inch Drone")
+        $('#figure').attr("src","image/DID10.png")
     }
     $( "select" ).change(function(){
         // var selector = "#" + this.id + " " + "option:selected" 
