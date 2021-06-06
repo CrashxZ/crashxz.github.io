@@ -17,15 +17,15 @@ var locale = navigator.language;
 document.addEventListener("DOMContentLoaded", function(event) {
   // Your code to run since DOM is loaded and ready
   if (localStorage.getItem("localSet") === null){
-    if(locale.startsWith("en")){
-      console.log("English Version")
+    if(locale.localeCompare("ru")){
+      console.log("Russian Version")
     }
     else{
-      console.log("Russian Version")
+      console.log("English Version")
     }
   }
 
-  console.log(locale);
+  console.log(locale.localeCompare("en"));
 
 
 

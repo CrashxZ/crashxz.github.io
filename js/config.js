@@ -82,6 +82,10 @@ fetch(query).then(res=>{
 
 
 $(function(){
+    if(type=='DID2'){
+        $("#drone_name").text("TinyWhoop - 2-inch")
+        $('#figure').attr("src","image/DID2.png")
+    }
     if(type=='DID5'){
         $("#drone_name").text("5 Inch Drone")
         $('#figure').attr("src","image/DID5.png")
