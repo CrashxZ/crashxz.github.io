@@ -13,20 +13,40 @@ function SubForm(){
 }
 
 var locale = navigator.language;
+var language = "";
+function translate(){
+  if (localStorage.getItem("localSet") === "ru"){
+    document.location.replace("index.html");
+    localStorage.setItem("localSet","en");
+    console.log("English Version")
+  }
+  else if (localStorage.getItem("localSet") === "en"){
+    document.location.replace("ru_index.html");
+    localStorage.setItem("localSet","ru");
+    console.log("Russian Version")
+  }
+
+}
 
 document.addEventListener("DOMContentLoaded", function(event) {
   // Your code to run since DOM is loaded and ready
+
   if (localStorage.getItem("localSet") === null){
-    if(locale.localeCompare("ru")){
-      console.log("Russian Version")
+    if(locale === "ru-RU"){
+      localStorage.setItem("localSet","ru");
+      document.location.replace("ru_index.html");
     }
-    else{
-      console.log("English Version")
-    }
+
   }
-
-  console.log(locale.localeCompare("en"));
-
+  // if(locale === "ru-RU"){
+  //   language = "en"
+  // }
+  // else{
+  //   language = "ru"
+  // }
+  //console.log(language)
+  $('#english_version').click(translate);
+  $('#russian_version').click(translate)
 
 
   $('#drone5').hover(function(){
