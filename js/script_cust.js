@@ -14,6 +14,9 @@ function SubForm(){
 
 var locale = navigator.language;
 var language = "";
+if (localStorage.getItem("translate_flag")===null){
+  localStorage.setItem("translate_flag",'0');
+}
 function translate(){
   if (localStorage.getItem("localSet") === "ru"){
     document.location.replace("index.html");
@@ -25,7 +28,7 @@ function translate(){
     localStorage.setItem("localSet","ru");
     console.log("Russian Version")
   }
-
+  localStorage.setItem("translate_flag",'1');
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -35,11 +38,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if(locale === "ru-RU"){
       localStorage.setItem("localSet","ru");
       document.location.replace("ru_index.html");
-    }else{
+    } else {
       localStorage.setItem("localSet","en");
     }
-
   }
+
+
+
+  // }else if(localStorage.getItem("localSet") === "ru"){
+  //   localStorage.setItem("localSet","en");
+  //   document.location.replace("ru_index.html");
+  // }
+    
   // if(locale === "ru-RU"){
   //   language = "en"
   // }
