@@ -14,6 +14,10 @@ function SubForm(){
 
 document.addEventListener("DOMContentLoaded", function(event) {
   // Your code to run since DOM is loaded and ready
+  var locale = navigator.language;
+  console.log(locale);
+
+
   $('#drone5').hover(function(){
     $(this).text("$200")
   },function(){
@@ -29,6 +33,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   },function(){
     $(this).text("Buy Now")
   })
+
+
+
+
 });
 
 
@@ -41,9 +49,3 @@ console.log(distance);
 if ( distance > 0){
   //document.location.replace("commingsoon.html");
 }
-
-
-$(function(){
-  var locale = navigator.locale;
-  console.log(locale);
-})
