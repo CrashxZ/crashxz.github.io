@@ -67,6 +67,9 @@ fetch(query).then(res=>{
                     if (element.part_type == 'Reciever'){
                         $("#reciever").append(new Option(element.part_name + " - ₽" + element.price,element.part_id))
                     }
+                    if (element.part_type == 'Goggles'){
+                        $("#goggles").append(new Option(element.part_name + " - ₽" + element.price,element.part_id))
+                    }
                     
                 });
                 
