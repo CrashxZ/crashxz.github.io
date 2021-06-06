@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if(locale === "ru-RU"){
       localStorage.setItem("localSet","ru");
       document.location.replace("ru_index.html");
+    }else{
+      localStorage.setItem("localSet","en");
     }
 
   }
