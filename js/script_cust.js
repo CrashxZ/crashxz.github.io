@@ -14,7 +14,6 @@ function SubForm(){
 
 
 var locale = navigator.language;
-var language = "";
 if (localStorage.getItem("translate_flag")===null){
   localStorage.setItem("translate_flag",'0');
   if(locale === "ru-RU"){
