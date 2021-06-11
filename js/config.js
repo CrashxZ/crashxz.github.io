@@ -1,6 +1,3 @@
-
-
-
 //logic
 function getParameterByName(name, url = window.location.href) {
     name = name.replace(/[\[\]]/g, '\\$&');
@@ -118,7 +115,7 @@ $(function(){
     if(type=='DID2'){
         $("#drone_name").text("TinyWhoop - 2-inch")
         $('#figure').attr("src","image/DID2.png")
-        setTimeout(populateOptimal,2000);
+        setTimeout(populateOptimal,2500);
     }
     if(type=='DID5'){
         $("#drone_name").text("5 Inch Drone")
@@ -131,6 +128,21 @@ $(function(){
     if(type=='DID10'){
         $("#drone_name").text("10 Inch Drone")
         $('#figure').attr("src","image/DID10.png")
+    }
+    if(type=='DID5_OPT'){
+        $("#drone_name").text("5 Inch Drone")
+        $('#figure').attr("src","image/DID5.png")
+        setTimeout(populateOptimal,2500);
+    }
+    if(type=='DID7_OPT'){
+        $("#drone_name").text("7 Inch Drone")
+        $('#figure').attr("src","image/DID7.png")
+        setTimeout(populateOptimal,2500);
+    }
+    if(type=='DID10_OPT'){
+        $("#drone_name").text("10 Inch Drone")
+        $('#figure').attr("src","image/DID10.png")
+        setTimeout(populateOptimal,2500);
     }
     $( "select" ).change(function(){
         // var selector = "#" + this.id + " " + "option:selected" 

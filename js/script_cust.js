@@ -26,7 +26,6 @@ function SubForm(){
 
 
 var locale = navigator.language;
-var language = "";
 if (localStorage.getItem("translate_flag")===null){
   localStorage.setItem("translate_flag",'0');
   if(locale === "ru-RU"){
@@ -49,23 +48,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // Your code to run since DOM is loaded and ready
 
   $('#english_version').click(translate_to_russian);
-  $('#russian_version').click(translate_to_english)
-
+  $('#russian_version').click(translate_to_english);
 
   $('#drone5').hover(function(){
+    temp = $(this).text();
     $(this).text("$200")
   },function(){
-    $(this).text("Buy Now")
+    $(this).text(temp)
   })
   $('#drone7').hover(function(){
+    temp = $(this).text();
     $(this).text("$300")
   },function(){
-    $(this).text("Buy Now")
+    $(this).text(temp)
   })
   $('#drone10').hover(function(){
+    temp = $(this).text();
     $(this).text("$400")
   },function(){
-    $(this).text("Buy Now")
+    $(this).text(temp)
   })
 
 
