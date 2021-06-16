@@ -200,10 +200,12 @@ $("#confirm_buy").click(function(){
     
     configured_item.push({extra_battery : extra_batt})
     configured_item.push({comments : $('#comments').val()})
+    configured_item.push({total_price : price})
     console.log(configured_item);
     configured_item = JSON.stringify(configured_item)
     localStorage.setItem("user_config", configured_item)
     $("#confirm_buy").prop('disabled', true)
+    document.location.replace("confirmation.html");
 })
 })
 
