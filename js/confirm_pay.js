@@ -46,7 +46,7 @@ function confirm_and_buy(){
     final_selection.push({ email : $('#email').val() });
     final_selection.push({ phone : $('#phone').val() });
     final_selection.push({ add1 : $('#add1').val() });
-    final_selection.push({ add2 : $('#add1').val() });
+    final_selection.push({ add2 : $('#add2').val() });
     final_selection.push({ zip : $('#zip').val() });
     final_selection.push({ state : $('#state').val() });
     final_selection.push({ city : $('#city').val() });
