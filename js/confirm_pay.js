@@ -38,3 +38,33 @@ jQuery(document).ready(function($){
 
 
 });
+
+function confirm_and_buy(){
+    final_selection = localStorage.getItem("user_config");
+    final_selection = JSON.parse(final_selection);
+    final_selection.unshift({ name : $('#name').val() });
+    final_selection.unshift({ email : $('#email').val() });
+    final_selection.unshift({ phone : $('#phone').val() });
+    final_selection.unshift({ add1 : $('#add1').val() });
+    final_selection.unshift({ add2 : $('#add1').val() });
+    final_selection.unshift({ zip : $('#zip').val() });
+    final_selection.unshift({ state : $('#state').val() });
+    final_selection.unshift({ city : $('#city').val() });
+    final_selection.unshift({ country : $('#country').val() });
+
+    final_selection_text = JSON.stringify(final_selection)
+
+    fetch("https://api.apispreadsheets.com/data/18182/", 
+    {
+        method: "POST",
+        body: JSON.stringify({"data": {"order_id":"#","order_status":"-","name":$('#name').text,"email":$('#email').text,"phone":$('#phone').text,"country":$('#country').text},"order_chunk":final_selection_text}),
+    }).then(res =>{
+	if (res.status === 201){
+		document.location.replace("order_placed.html");
+	}
+	else{
+		// ERROR
+        alert("Something Went Wrong ! Please refresh the page and try again! ");
+	}
+})
+}
