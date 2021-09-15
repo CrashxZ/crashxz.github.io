@@ -54,10 +54,12 @@ function confirm_and_buy(){
 
     final_selection_text = JSON.stringify(final_selection)
 
+    request = JSON.stringify({"data": {"order_id":"#","order_status":"-","name":$('#name').val(),"email":$('#email').val(),"phone":$('#phone').val(),"country":$('#country').val(),"order_chunk" : final_selection_text }})
+    console.log(request)
     fetch("https://api.apispreadsheets.com/data/18182/", 
     {
         method: "POST",
-        body: JSON.stringify({"data": {"order_id":"#","order_status":"-","name":$('#name').val(),"email":$('#email').val(),"phone":$('#phone').val(),"country":$('#country').val()},"order_chunk":final_selection_text})
+        body: request,
     }).then(res =>{
 	if (res.status === 201){
 		document.location.replace("order_placed.html");
