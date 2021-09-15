@@ -42,15 +42,15 @@ jQuery(document).ready(function($){
 function confirm_and_buy(){
     final_selection = localStorage.getItem("user_config");
     final_selection = JSON.parse(final_selection);
-    final_selection.push({ name : $('#name').val() });
-    final_selection.push({ email : $('#email').val() });
-    final_selection.push({ phone : $('#phone').val() });
-    final_selection.push({ add1 : $('#add1').val() });
-    final_selection.push({ add2 : $('#add1').val() });
-    final_selection.push({ zip : $('#zip').val() });
-    final_selection.push({ state : $('#state').val() });
-    final_selection.push({ city : $('#city').val() });
-    final_selection.push({ country : $('#country').val() });
+    final_selection.unshift({ name : $('#name').val() });
+    final_selection.unshift({ email : $('#email').val() });
+    final_selection.unshift({ phone : $('#phone').val() });
+    final_selection.unshift({ add1 : $('#add1').val() });
+    final_selection.unshift({ add2 : $('#add1').val() });
+    final_selection.unshift({ zip : $('#zip').val() });
+    final_selection.unshift({ state : $('#state').val() });
+    final_selection.unshift({ city : $('#city').val() });
+    final_selection.unshift({ country : $('#country').val() });
 
     final_selection_text = JSON.stringify(final_selection)
 
